@@ -1,5 +1,5 @@
 import ProfileLayer from "@/components/ProfileLayer";
 
-export default function Home() {
+export default function ProfilePage() {
   return <ProfileLayer />;
 }

@@ -9,8 +9,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Kutip - Profil",
-  description: "Aplikasi Kutip - Profil Pengguna",
+  title: "Kutip",
+  description: "Aplikasi Kutip",
 };
 
 export default function RootLayout({

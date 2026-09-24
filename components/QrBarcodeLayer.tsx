@@ -10,7 +10,7 @@ interface QrBarcodeLayerProps {
 export default function QrBarcodeLayer({ onBack }: QrBarcodeLayerProps) {
   return (
     <div
-      className="w-full sm:max-w-[375px] h-screen sm:h-[812px] bg-[#758c3b] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border border-black/5"
+      className="w-full sm:max-w-[375px] h-screen h-dvh sm:h-[812px] bg-[#758c3b] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border-0 sm:border sm:border-black/5"
       data-node-id="95:37"
       data-name="QR Barcode"
     >

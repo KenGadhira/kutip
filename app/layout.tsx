@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -11,6 +12,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Kutip",
   description: "Aplikasi Kutip",
+  icons: {
+    icon: "/assets/svg/trash-can.svg",
+  },
 };
 
 export default function RootLayout({
@@ -25,6 +29,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex items-center justify-center p-0 sm:p-4">
         {children}
+        <Analytics />
       </body>
     </html>
   );

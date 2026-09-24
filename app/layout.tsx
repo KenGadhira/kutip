@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import SplashScreen from "@/components/SplashScreen";
@@ -18,13 +18,6 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  viewportFit: "cover",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,7 +28,7 @@ export default function RootLayout({
       lang="id"
       className={`${plusJakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full h-dvh sm:h-auto flex items-center justify-center p-0 sm:p-4 overflow-hidden sm:overflow-auto">
+      <body className="min-h-full flex items-center justify-center p-0 sm:p-4">
         <SplashScreen />
         {children}
         <Analytics />

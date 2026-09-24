@@ -9,49 +9,20 @@ interface ProfileLayerProps {
 }
 
 export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
+  // ponytail: local state for profile info; replace with backend sync on auth integration
   const [isEditing, setIsEditing] = useState(false);
-  const [userName, setUserName] = useState("George Harrison");
-  const [userLocation, setUserLocation] = useState("Wastukencana, Bandung");
+  const [userName, setUserName] = useState("Bapak Jarwo");
+  const [userLocation, setUserLocation] = useState("RT 05 - Wastukencana, Bandung");
 
   return (
     <div
       className="w-full sm:max-w-[375px] h-screen sm:h-[812px] bg-[#f9f8f6] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border border-black/5"
       data-node-id="95:133"
-      data-name="Profile"
+      data-name="Profile Final"
     >
-      {/* iOS Status Bar */}
-      <header
-        className="w-full h-[54px] flex items-center justify-between px-6 shrink-0 z-20 bg-[#f9f8f6]"
-        data-node-id="95:134"
-        data-name="iOS status bar"
-      >
-        <div className="flex-1 h-[54px] flex items-center" data-node-id="95:135" data-name="Time">
-          <span
-            className="text-[17px] font-semibold text-[#333333] tracking-tight"
-            data-node-id="95:136"
-          >
-            9:41
-          </span>
-        </div>
-        <div
-          className="h-[54px] w-[140.5px] relative shrink-0 flex items-center justify-end"
-          data-node-id="95:137"
-          data-name="Levels"
-        >
-          <Image
-            src="/assets/ios-levels.svg"
-            alt="Status Bar Indicators"
-            width={140}
-            height={54}
-            className="block max-w-none h-[54px] w-[140.5px]"
-            priority
-          />
-        </div>
-      </header>
-
       {/* Main Content Area */}
       <main
-        className="bg-[#faf9f5] flex-1 overflow-y-auto px-4 pt-5 pb-24 flex flex-col gap-6 relative z-10"
+        className="bg-[#f9f8f6] flex-1 overflow-y-auto px-4 pt-8 pb-24 flex flex-col gap-6 relative z-10"
         data-node-id="95:173"
         data-name="Main"
       >
@@ -158,38 +129,211 @@ export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
               )}
             </div>
           </div>
+
+          {/* Line Break */}
+          <div
+            className="bg-[#e6e6e6] h-[2px] rounded-[10px] w-full"
+            data-node-id="157:213"
+            data-name="Line Break"
+          />
         </section>
 
-        {/* Notifikasi Card 1 - Statistik Sampah */}
+        {/* Stats Card - Bulan Ini */}
         <section
-          className="flex flex-col gap-2 w-full"
+          className="flex flex-col gap-1 w-full"
           data-node-id="95:185"
-          data-name="Notifikasi Card"
+          data-name="Stats Card"
         >
           <div
             className="flex items-center px-1 w-full"
-            data-node-id="95:186"
+            data-node-id="157:197"
             data-name="Heading 3"
           >
             <h2
               className="text-[20px] font-semibold text-[#2b2b2b] leading-[28px] whitespace-nowrap"
-              data-node-id="95:187"
+              data-node-id="157:198"
             >
-              Statistik sampah
+              Bulan Ini
             </h2>
           </div>
           <div
-            className="bg-[#4f7730] h-[114px] rounded-[8px] w-full shadow-sm transition hover:brightness-105"
-            data-node-id="95:188"
-            data-name="Card"
-          />
+            className="flex gap-6 items-center px-1 w-full"
+            data-node-id="157:200"
+            data-name="Row"
+          >
+            <div
+              className="flex flex-col items-start justify-center"
+              data-node-id="157:202"
+              data-name="Individual Status"
+            >
+              <span
+                className="text-[13px] font-normal text-[#2b2b2b]/70 leading-[20px]"
+                data-node-id="157:201"
+              >
+                Berat
+              </span>
+              <span
+                className="text-[15px] font-semibold text-[#2b2b2b] leading-[28px]"
+                data-node-id="157:203"
+              >
+                2 Ton
+              </span>
+            </div>
+            <div
+              className="flex flex-col items-start justify-center"
+              data-node-id="157:204"
+              data-name="Individual Status"
+            >
+              <span
+                className="text-[13px] font-normal text-[#2b2b2b]/70 leading-[20px]"
+                data-node-id="157:205"
+              >
+                Poin
+              </span>
+              <span
+                className="text-[15px] font-semibold text-[#2b2b2b] leading-[28px]"
+                data-node-id="157:206"
+              >
+                150.000
+              </span>
+            </div>
+            <div
+              className="flex flex-col items-start justify-center"
+              data-node-id="157:207"
+              data-name="Individual Status"
+            >
+              <span
+                className="text-[13px] font-normal text-[#2b2b2b]/70 leading-[20px]"
+                data-node-id="157:208"
+              >
+                Lebar
+              </span>
+              <span
+                className="text-[15px] font-semibold text-[#2b2b2b] leading-[28px]"
+                data-node-id="157:209"
+              >
+                1.5 Meter
+              </span>
+            </div>
+          </div>
         </section>
 
-        {/* Notifikasi Card 2 - Akun QR */}
+        {/* Stats Card - Ton Terkumpul */}
+        <section
+          className="flex flex-col gap-2 w-full"
+          data-node-id="157:180"
+          data-name="Stats Card"
+        >
+          <div
+            className="flex items-center px-1 w-full"
+            data-node-id="157:181"
+            data-name="Heading 3"
+          >
+            <h2
+              className="text-[20px] font-normal text-[#2b2b2b] leading-[28px] whitespace-nowrap"
+              data-node-id="157:182"
+            >
+              Ton Terkumpul
+            </h2>
+          </div>
+          <div
+            className="bg-[#e6e6e6] h-[114px] rounded-[8px] w-full flex items-center justify-center relative overflow-hidden px-1"
+            data-node-id="157:183"
+            data-name="Card"
+          >
+            <div
+              className="relative w-[320px] h-[123px] overflow-hidden shrink-0 flex items-center justify-center"
+              data-node-id="157:184"
+              data-name="linechart-wrapper"
+            >
+              <div
+                className="relative w-[320px] h-[123px] overflow-hidden shrink-0"
+                data-node-id="157:185"
+                data-name="linechart"
+              >
+                <div
+                  className="absolute left-[10px] top-[82.4px] w-[60px] flex flex-col items-center"
+                  data-node-id="157:186"
+                  data-name="Frame"
+                >
+                  <span
+                    className="font-bold text-[14px] text-[#333333] text-center"
+                    data-node-id="157:187"
+                  >
+                    84
+                  </span>
+                </div>
+                <div
+                  className="absolute left-[70px] top-[96.8px] w-[60px] flex flex-col items-center"
+                  data-node-id="157:188"
+                  data-name="Frame"
+                >
+                  <span
+                    className="font-bold text-[14px] text-[#333333] text-center"
+                    data-node-id="157:189"
+                  >
+                    78
+                  </span>
+                </div>
+                <div
+                  className="absolute left-[130px] top-[9.6px] w-[60px] flex flex-col items-center"
+                  data-node-id="157:190"
+                  data-name="Frame"
+                >
+                  <span
+                    className="font-bold text-[14px] text-[#333333] text-center"
+                    data-node-id="157:191"
+                  >
+                    96
+                  </span>
+                </div>
+                <div
+                  className="absolute left-[190px] top-[65.6px] w-[60px] flex flex-col items-center"
+                  data-node-id="157:192"
+                  data-name="Frame"
+                >
+                  <span
+                    className="font-bold text-[14px] text-[#333333] text-center"
+                    data-node-id="157:193"
+                  >
+                    91
+                  </span>
+                </div>
+                <div
+                  className="absolute left-[250px] top-[65.6px] w-[60px] flex flex-col items-center"
+                  data-node-id="157:194"
+                  data-name="Frame"
+                >
+                  <span
+                    className="font-bold text-[14px] text-[#333333] text-center"
+                    data-node-id="157:195"
+                  >
+                    91
+                  </span>
+                </div>
+                <div
+                  className="absolute left-[40px] top-[49.6px] w-[240px] h-[43.2px]"
+                  data-node-id="157:196"
+                  data-name="Vector"
+                >
+                  <Image
+                    src="/assets/chart-line.svg"
+                    alt="Grafik Garis Ton Terkumpul"
+                    width={242}
+                    height={45}
+                    className="block w-full h-full max-w-none"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Card - Akun QR */}
         <section
           className="flex flex-col gap-2 w-full"
           data-node-id="95:189"
-          data-name="Notifikasi Card"
+          data-name="Card"
         >
           <div
             className="flex items-center px-1 w-full"
@@ -197,7 +341,7 @@ export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
             data-name="Heading 3"
           >
             <h2
-              className="text-[20px] font-semibold text-[#2b2b2b] leading-[28px] whitespace-nowrap"
+              className="text-[20px] font-normal text-[#2b2b2b] leading-[28px] whitespace-nowrap"
               data-node-id="95:191"
             >
               Akun QR
@@ -208,12 +352,12 @@ export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
             <button
               type="button"
               onClick={onQrClick}
-              className="bg-[#4f7730] h-[136px] rounded-[8px] w-full flex items-center justify-center px-1 shadow-sm transition hover:brightness-105 active:scale-[0.99] cursor-pointer"
+              className="bg-[#e6e6e6] h-[136px] rounded-[8px] w-full flex items-center justify-center px-1 shadow-sm transition hover:brightness-95 active:scale-[0.99] cursor-pointer"
               data-node-id="95:192"
               data-name="Card"
             >
               <span
-                className="text-[20px] font-semibold text-[#f9f8f6] leading-[28px] whitespace-nowrap"
+                className="text-[20px] font-semibold text-[#2b2b2b] leading-[28px] whitespace-nowrap"
                 data-node-id="95:193"
               >
                 Flow ke page QR
@@ -222,12 +366,12 @@ export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
           ) : (
             <Link
               href="/qr"
-              className="bg-[#4f7730] h-[136px] rounded-[8px] w-full flex items-center justify-center px-1 shadow-sm transition hover:brightness-105 active:scale-[0.99] cursor-pointer"
+              className="bg-[#e6e6e6] h-[136px] rounded-[8px] w-full flex items-center justify-center px-1 shadow-sm transition hover:brightness-95 active:scale-[0.99] cursor-pointer"
               data-node-id="95:192"
               data-name="Card"
             >
               <span
-                className="text-[20px] font-semibold text-[#f9f8f6] leading-[28px] whitespace-nowrap"
+                className="text-[20px] font-semibold text-[#2b2b2b] leading-[28px] whitespace-nowrap"
                 data-node-id="95:193"
               >
                 Flow ke page QR
@@ -239,7 +383,7 @@ export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
 
       {/* Bottom Footer Navigation */}
       <footer
-        className="w-full h-[72px] bg-[#92aa56] absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center px-12"
+        className="w-full h-[72px] bg-[#f9f8f6] absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center px-12"
         data-node-id="95:159"
         data-name="Bottom Footer"
       >
@@ -270,27 +414,21 @@ export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
               />
             </Link>
 
-            {/* Profile Icon (Active) */}
+            {/* Profile Icon (Active - green filled) */}
             <Link
               href="/profile"
-              className="w-8 h-8 flex items-center justify-center relative hover:opacity-90 transition cursor-pointer"
+              className="w-8 h-8 flex items-center justify-center relative hover:opacity-80 transition cursor-pointer"
               data-node-id="95:165"
-              data-name="akar-icons:person"
+              data-name="gravity-ui:person-fill"
               aria-label="Profil (Aktif)"
             >
-              <div
-                className="w-6 h-6 flex items-center justify-center"
-                data-node-id="95:166"
-                data-name="Group"
-              >
-                <Image
-                  src="/assets/icon-person.svg"
-                  alt="Profil"
-                  width={20}
-                  height={22}
-                  className="w-5 h-[22px]"
-                />
-              </div>
+              <Image
+                src="/assets/icon-person-fill.svg"
+                alt="Profil"
+                width={24}
+                height={24}
+                className="w-6 h-6"
+              />
             </Link>
 
             {/* Truck Icon */}

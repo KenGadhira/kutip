@@ -14,6 +14,7 @@
   --color-kutip-bg: #f9f8f6;
   --color-kutip-main: #faf9f5;
   --color-kutip-dark: #2b2b2b;
+  --color-kutip-splash: #758c3b;
 }
 
 body {
@@ -21,3 +22,4 @@ body {
   color: var(--foreground);
   font-family: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+

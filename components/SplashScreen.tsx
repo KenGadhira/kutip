@@ -35,7 +35,7 @@ export default function SplashScreen({
 
   const content = (
     <div
-      className="w-full sm:max-w-[375px] h-screen sm:h-[812px] bg-[#758c3b] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col items-center justify-center relative mx-auto select-none border border-black/5"
+      className="w-full sm:max-w-[375px] h-screen sm:h-[812px] bg-kutip-splash sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col items-center justify-center relative mx-auto select-none border border-black/5"
       data-node-id="98:3"
       data-name="Splash Screen"
     >

@@ -39,7 +39,7 @@ export default function BottomNav({
 
   return (
     <nav
-      className={`w-full bg-[#f9f8f6] border-t border-[#f3f4f6] flex items-center justify-between px-[24px] py-[14px] shrink-0 z-20 ${className}`}
+      className={`w-full bg-[#f9f8f6] border-t border-[#f3f4f6] flex items-center justify-between px-[24px] pt-[14px] pb-[calc(14px+env(safe-area-inset-bottom,0px))] shrink-0 z-30 sticky bottom-0 ${className}`}
       data-node-id="225:590"
       data-name="Nav"
       aria-label="Navigasi Bawah"

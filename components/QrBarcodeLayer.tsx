@@ -10,7 +10,7 @@ interface QrBarcodeLayerProps {
 export default function QrBarcodeLayer({ onBack }: QrBarcodeLayerProps) {
   return (
     <div
-      className="w-full sm:max-w-[375px] h-screen sm:h-[812px] bg-[#758c3b] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border border-black/5"
+      className="w-full sm:max-w-[375px] h-screen h-dvh sm:h-[812px] bg-[#758c3b] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border-0 sm:border sm:border-black/5"
       data-node-id="95:37"
       data-name="QR Barcode"
     >
@@ -147,7 +147,7 @@ export default function QrBarcodeLayer({ onBack }: QrBarcodeLayerProps) {
 
       {/* Bottom Footer Navigation */}
       <footer
-        className="w-full h-[72px] bg-[#92aa56] absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center px-12"
+        className="w-full min-h-[72px] pb-[calc(14px+env(safe-area-inset-bottom,0px))] pt-[14px] bg-[#92aa56] absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center px-12"
         data-node-id="95:71"
         data-name="Bottom Footer"
       >

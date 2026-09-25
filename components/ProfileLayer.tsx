@@ -17,7 +17,7 @@ export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
 
   return (
     <div
-      className="w-full sm:max-w-[375px] h-screen sm:h-[812px] bg-[#f9f8f6] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border border-black/5"
+      className="w-full sm:max-w-[375px] h-screen h-dvh sm:h-[812px] bg-[#f9f8f6] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border-0 sm:border sm:border-black/5"
       data-node-id="95:133"
       data-name="Profile Final"
     >

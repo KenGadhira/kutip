@@ -26,7 +26,7 @@ export default function HomeDashboardLayer({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="w-full sm:max-w-[375px] h-screen sm:h-[812px] bg-[#f5f6f4] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border border-black/5"
+      className="w-full sm:max-w-[375px] h-screen h-dvh sm:h-[812px] bg-[#f5f6f4] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border-0 sm:border sm:border-black/5"
       data-node-id="181:1087"
       data-name="Home Dashboard Final"
     >
@@ -495,184 +495,164 @@ export default function HomeDashboardLayer({
           {/* Penjadwalan */}
           <button
             type="button"
-            className="bg-[#f9f8f6] border border-[#f3f4f6] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer"
+            className="bg-[#f9f8f6] border border-[#f3f4f6] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col items-start justify-start min-h-[122px] overflow-hidden p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer text-left"
             data-node-id="181:1151"
             data-name="Background+Border+Shadow"
+            aria-label="Penjadwalan"
           >
             <div
-              className="flex flex-col h-[68px] items-center pb-[12px] relative shrink-0 w-[56px]"
-              data-node-id="181:1152"
-              data-name="Margin"
-            >
-              <div
-                className="bg-[#eff6ff] flex items-center justify-center relative rounded-[16px] shrink-0 size-[56px]"
-                data-node-id="181:1153"
-                data-name="Background"
-              >
-                <div
-                  className="h-[24px] w-[21px] relative shrink-0"
-                  data-node-id="181:1154"
-                  data-name="Img"
-                >
-                  <Image
-                    src="/assets/home/menu-penjadwalan.svg"
-                    alt="Penjadwalan"
-                    width={21}
-                    height={24}
-                    className="block size-full"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="flex flex-col items-center relative shrink-0"
+              className="flex flex-col items-start relative shrink-0 z-10"
               data-node-id="181:1156"
               data-name="Container"
             >
               <p
-                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-center tracking-[0.0684px] whitespace-nowrap"
+                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-left tracking-[0.0684px] whitespace-nowrap"
                 data-node-id="181:1157"
               >
                 Penjadwalan
               </p>
             </div>
-          </button>
-
-          {/* Status & Bayar */}
-          <button
-            type="button"
-            className="bg-[#f9f8f6] border border-[#f3f4f6] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer"
-            data-node-id="181:1158"
-            data-name="Background+Border+Shadow"
-          >
             <div
-              className="flex flex-col h-[68px] items-center pb-[12px] relative shrink-0 w-[56px]"
-              data-node-id="181:1159"
-              data-name="Margin"
+              className="absolute flex items-center justify-center left-[97px] top-[68px] rounded-[16px] size-[56px] pointer-events-none"
+              data-node-id="181:1153"
+              data-name="Background"
             >
               <div
-                className="bg-[#fff7ed] flex items-center justify-center relative rounded-[16px] shrink-0 size-[56px]"
-                data-node-id="181:1160"
-                data-name="Background"
+                className="h-[93px] relative shrink-0 w-[81px]"
+                data-node-id="181:1154"
+                data-name="Img"
               >
-                <div
-                  className="h-[24px] w-[18px] relative shrink-0"
-                  data-node-id="181:1161"
-                  data-name="Img"
-                >
-                  <Image
-                    src="/assets/home/menu-status-bayar.svg"
-                    alt="Status & Bayar"
-                    width={18}
-                    height={24}
-                    className="block size-full"
-                  />
-                </div>
+                <Image
+                  src="/assets/home/menu-penjadwalan.svg"
+                  alt=""
+                  width={81}
+                  height={93}
+                  className="block size-full"
+                />
               </div>
-            </div>
-            <div
-              className="flex flex-col items-center relative shrink-0"
-              data-node-id="181:1163"
-              data-name="Container"
-            >
-              <p
-                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-center tracking-[0.0273px] whitespace-nowrap"
-                data-node-id="181:1164"
-              >
-                Status & Bayar
-              </p>
             </div>
           </button>
 
-          {/* Rewards */}
+          {/* Pembayaran */}
           <button
             type="button"
-            className="bg-[#f9f8f6] border border-[#f3f4f6] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer"
-            data-node-id="181:1165"
+            className="bg-[#f9f8f6] border border-[#f3f4f6] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col items-start justify-start min-h-[122px] overflow-hidden p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer text-left"
+            data-node-id="272:300"
             data-name="Background+Border+Shadow"
+            aria-label="Pembayaran"
           >
             <div
-              className="flex flex-col h-[68px] items-center pb-[12px] relative shrink-0 w-[56px]"
-              data-node-id="181:1166"
-              data-name="Margin"
-            >
-              <div
-                className="bg-[#faf5ff] flex items-center justify-center relative rounded-[16px] shrink-0 size-[56px]"
-                data-node-id="181:1167"
-                data-name="Background"
-              >
-                <div
-                  className="relative shrink-0 size-[24px]"
-                  data-node-id="181:1168"
-                  data-name="Img"
-                >
-                  <Image
-                    src="/assets/home/menu-rewards.svg"
-                    alt="Rewards"
-                    width={24}
-                    height={24}
-                    className="block size-full"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="flex flex-col items-center relative shrink-0"
-              data-node-id="181:1170"
+              className="flex flex-col items-start relative shrink-0 z-10"
+              data-node-id="272:304"
               data-name="Container"
             >
               <p
-                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-center tracking-[0.041px] whitespace-nowrap"
-                data-node-id="181:1171"
+                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-left tracking-[0.0684px] whitespace-nowrap"
+                data-node-id="272:305"
               >
-                Rewards
+                Pembayaran
               </p>
+            </div>
+            <div
+              className="absolute flex items-center justify-center left-[97px] top-[68px] rounded-[16px] size-[56px] pointer-events-none"
+              data-node-id="272:301"
+              data-name="Background"
+            >
+              <div
+                className="h-[78.67px] relative shrink-0 w-[59px]"
+                data-node-id="272:306"
+                data-name="Img"
+              >
+                <Image
+                  src="/assets/home/menu-pembayaran.svg"
+                  alt=""
+                  width={59}
+                  height={79}
+                  className="block size-full"
+                />
+              </div>
+            </div>
+          </button>
+
+          {/* Hadiah */}
+          <button
+            type="button"
+            className="bg-[#f9f8f6] border border-[#f3f4f6] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col items-start justify-start min-h-[122px] overflow-hidden p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer text-left"
+            data-node-id="272:315"
+            data-name="Background+Border+Shadow"
+            aria-label="Hadiah"
+          >
+            <div
+              className="flex flex-col items-start relative shrink-0 z-10"
+              data-node-id="272:319"
+              data-name="Container"
+            >
+              <p
+                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-left tracking-[0.0684px] whitespace-nowrap"
+                data-node-id="272:320"
+              >
+                Hadiah
+              </p>
+            </div>
+            <div
+              className="absolute flex items-center justify-center left-[97px] top-[68px] rounded-[16px] size-[56px] pointer-events-none"
+              data-node-id="272:316"
+              data-name="Background"
+            >
+              <div
+                className="relative shrink-0 size-[76px]"
+                data-node-id="272:327"
+                data-name="Img"
+              >
+                <Image
+                  src="/assets/home/menu-hadiah.svg"
+                  alt=""
+                  width={76}
+                  height={76}
+                  className="block size-full"
+                />
+              </div>
             </div>
           </button>
 
           {/* Riwayat */}
           <button
             type="button"
-            className="bg-[#f9f8f6] border border-[#f3f4f6] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer"
-            data-node-id="181:1172"
+            className="bg-[#f9f8f6] border border-[#f3f4f6] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col items-start justify-start min-h-[122px] overflow-hidden p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer text-left"
+            data-node-id="272:321"
             data-name="Background+Border+Shadow"
+            aria-label="Riwayat"
           >
             <div
-              className="flex flex-col h-[68px] items-center pb-[12px] relative shrink-0 w-[56px]"
-              data-node-id="181:1173"
-              data-name="Margin"
-            >
-              <div
-                className="bg-[#f0fdfa] flex items-center justify-center relative rounded-[16px] shrink-0 size-[56px]"
-                data-node-id="181:1174"
-                data-name="Background"
-              >
-                <div
-                  className="relative shrink-0 size-[24px]"
-                  data-node-id="181:1175"
-                  data-name="Img"
-                >
-                  <Image
-                    src="/assets/home/menu-riwayat.svg"
-                    alt="Riwayat"
-                    width={24}
-                    height={24}
-                    className="block size-full"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="flex flex-col items-center relative shrink-0"
-              data-node-id="181:1177"
+              className="flex flex-col items-start relative shrink-0 z-10"
+              data-node-id="272:325"
               data-name="Container"
             >
               <p
-                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-center tracking-[0.082px] whitespace-nowrap"
-                data-node-id="181:1178"
+                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-left tracking-[0.0684px] whitespace-nowrap"
+                data-node-id="272:326"
               >
                 Riwayat
               </p>
+            </div>
+            <div
+              className="absolute flex items-center justify-center left-[97px] top-[68px] rounded-[16px] size-[56px] pointer-events-none"
+              data-node-id="272:322"
+              data-name="Background"
+            >
+              <div
+                className="relative shrink-0 size-[68px]"
+                data-node-id="272:330"
+                data-name="Img"
+              >
+                <Image
+                  src="/assets/home/menu-riwayat.svg"
+                  alt=""
+                  width={68}
+                  height={68}
+                  className="block size-full"
+                />
+              </div>
             </div>
           </button>
         </section>

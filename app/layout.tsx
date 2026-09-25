@@ -28,7 +28,10 @@ export default function RootLayout({
       lang="id"
       className={`${plusJakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex items-center justify-center p-0 sm:p-4">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex items-center justify-center p-0 sm:p-4"
+      >
         <SplashScreen />
         {children}
         <Analytics />

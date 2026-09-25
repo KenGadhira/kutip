@@ -25,7 +25,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Next.js 16 breaking changes**: Reference documentation located in `node_modules/next/dist/docs/`.
 - **Routing**: `app/` directory (`layout.tsx`, `page.tsx`, `login/page.tsx`, `profile/page.tsx`, `qr/page.tsx`, `splash/page.tsx`).
 - **Startup Animation / Splash Screen**: `<SplashScreen />` rendered in `app/layout.tsx` overlaying any route on initial app start.
-- **Figma Layers / Components**: Screen components mirror Figma frames (`LoginAuthLayer` -> `191:65`, `ProfileLayer` -> `95:133`, `QrBarcodeLayer` -> `95:37`, `SplashScreen` -> `98:3`).
+- **Figma Layers / Components**: Screen components mirror Figma frames (`HomeDashboardLayer` -> `181:1087`, `LoginAuthLayer` -> `191:65`, `ProfileLayer` -> `95:133`, `QrBarcodeLayer` -> `95:37`, `SplashScreen` -> `98:3`).
 - **Animation**: `motion` (`motion/react`) for UI transitions and component animations.
 - **Styling**: Tailwind CSS v4 via `@tailwindcss/postcss` and `@theme inline` in `app/globals.css`. Uses mobile mock shell (`sm:max-w-[375px] sm:h-[812px]`) centered in desktop viewport.
 - **Path Aliases**: `@/*` maps to project root `./*` via `tsconfig.json`.

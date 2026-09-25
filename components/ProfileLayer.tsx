@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import BottomNav from "@/components/BottomNav";
 
 interface ProfileLayerProps {
   onQrClick?: () => void;
@@ -22,7 +23,7 @@ export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
     >
       {/* Main Content Area */}
       <main
-        className="bg-[#f9f8f6] flex-1 overflow-y-auto px-4 pt-8 pb-24 flex flex-col gap-6 relative z-10"
+        className="bg-[#f9f8f6] flex-1 overflow-y-auto px-4 pt-8 pb-6 flex flex-col gap-6 relative z-10"
         data-node-id="95:173"
         data-name="Main"
       >
@@ -381,81 +382,8 @@ export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
         </section>
       </main>
 
-      {/* Bottom Footer Navigation */}
-      <footer
-        className="w-full h-[72px] bg-[#f9f8f6] absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center px-12"
-        data-node-id="95:159"
-        data-name="Bottom Footer"
-      >
-        <div
-          className="w-full flex items-center justify-between"
-          data-node-id="95:161"
-          data-name="Heading"
-        >
-          <div
-            className="w-full flex items-center justify-between"
-            data-node-id="95:162"
-            data-name="Container"
-          >
-            {/* Home Icon */}
-            <Link
-              href="/"
-              className="w-8 h-8 flex items-center justify-center hover:opacity-80 transition cursor-pointer"
-              data-node-id="95:163"
-              data-name="akar-icons:home"
-              aria-label="Beranda"
-            >
-              <Image
-                src="/assets/icon-home.svg"
-                alt="Beranda"
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-            </Link>
-
-            {/* Profile Icon (Active - green filled) */}
-            <Link
-              href="/profile"
-              className="w-8 h-8 flex items-center justify-center relative hover:opacity-80 transition cursor-pointer"
-              data-node-id="95:165"
-              data-name="gravity-ui:person-fill"
-              aria-label="Profil (Aktif)"
-            >
-              <Image
-                src="/assets/icon-person-fill.svg"
-                alt="Profil"
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-            </Link>
-
-            {/* Truck Icon */}
-            <button
-              type="button"
-              className="w-8 h-8 flex items-center justify-center hover:opacity-80 transition cursor-pointer"
-              data-node-id="95:169"
-              data-name="akar-icons:truck"
-              aria-label="Pelacak Sampah"
-            >
-              <div
-                className="w-6 h-6 flex items-center justify-center"
-                data-node-id="95:170"
-                data-name="Group"
-              >
-                <Image
-                  src="/assets/icon-truck.svg"
-                  alt="Pelacak Sampah"
-                  width={22}
-                  height={18}
-                  className="w-[22px] h-[18px]"
-                />
-              </div>
-            </button>
-          </div>
-        </div>
-      </footer>
+      {/* Bottom Navigation */}
+      <BottomNav activeTab="akun" />
     </div>
   );
 }

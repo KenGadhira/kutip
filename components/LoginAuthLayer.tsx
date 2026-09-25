@@ -19,7 +19,7 @@ export default function LoginAuthLayer({
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     setLoading(true);
 
@@ -28,7 +28,7 @@ export default function LoginAuthLayer({
     if (onLogin) {
       onLogin({ email: targetEmail });
     } else if (standalone) {
-      router.push("/profile");
+      router.push("/");
     }
   };
 

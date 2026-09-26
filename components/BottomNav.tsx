@@ -28,6 +28,8 @@ export default function BottomNav({
     activeTabProp ??
     (pathname === "/profile"
       ? "akun"
+      : pathname === "/penjadwalan"
+      ? "jadwal"
       : pathname === "/"
       ? "home"
       : internalTab);
@@ -86,8 +88,8 @@ export default function BottomNav({
       </Link>
 
       {/* Jadwal */}
-      <button
-        type="button"
+      <Link
+        href="/penjadwalan"
         onClick={() => handleTabClick("jadwal")}
         className={`flex flex-col gap-[6px] items-center relative shrink-0 hover:opacity-80 transition cursor-pointer ${
           currentTab === "jadwal" ? "text-kutip-green" : "text-[#9ca3af]"
@@ -95,6 +97,7 @@ export default function BottomNav({
         data-node-id="I225:590;231:79"
         data-name="Container"
         aria-label="Jadwal"
+        aria-current={currentTab === "jadwal" ? "page" : undefined}
       >
         <div
           className="h-[16px] w-[14px] relative shrink-0"
@@ -123,7 +126,7 @@ export default function BottomNav({
         >
           Jadwal
         </span>
-      </button>
+      </Link>
 
       {/* Status */}
       <button

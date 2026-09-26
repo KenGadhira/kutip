@@ -15,7 +15,7 @@ export default function PenjadwalanLayer() {
       data-node-id="181:1239"
       data-name="Penjadwalan Flow Final"
     >
-      <main className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col gap-[20px] items-center pb-[16px] relative w-full">
+      <main className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col gap-[20px] items-center pb-[88px] relative w-full">
         {/* Header */}
         <header
           className="bg-[#f9f8f6] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex gap-[16px] items-center pb-[16px] pt-[32px] px-[20px] relative shrink-0 w-full"

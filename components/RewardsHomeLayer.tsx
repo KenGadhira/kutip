@@ -60,7 +60,7 @@ export default function RewardsHomeLayer({ points = 1250 }: RewardsHomeLayerProp
         >
           Rewards
         </h1>
-        <button
+        {/* <button
           type="button"
           className="bg-[#f9fafb] flex items-center justify-center rounded-full size-[40px] hover:opacity-80 transition"
           data-node-id="181:1509"
@@ -73,7 +73,7 @@ export default function RewardsHomeLayer({ points = 1250 }: RewardsHomeLayerProp
             height={14}
             className="size-[14px]"
           />
-        </button>
+        </button> */}
       </header>
 
       {/* Scrollable Content */}

@@ -218,8 +218,8 @@ export default function HomeDashboardLayer({
             </div>
           </div>
 
-          <button
-            type="button"
+          <Link
+            href="/rewards"
             className="bg-kutip-green flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-full shrink-0 shadow-[0px_4px_6px_-1px_rgba(20,83,45,0.1),0px_2px_4px_-2px_rgba(20,83,45,0.1)] hover:bg-[#3d6b27] transition active:scale-95 cursor-pointer"
             data-node-id="181:1119"
             data-name="Button"
@@ -230,7 +230,7 @@ export default function HomeDashboardLayer({
             >
               Tukar Poin
             </span>
-          </button>
+          </Link>
         </section>
 
         {/* Promo Carousel */}
@@ -271,13 +271,13 @@ export default function HomeDashboardLayer({
                   data-node-id="181:1126"
                   data-name="Img"
                 >
-                  <Image
+                  {/* <Image
                     src="/assets/home/banner-deco-1.svg"
                     alt=""
                     width={144}
                     height={128}
                     className="block size-full"
-                  />
+                  /> */}
                 </div>
               </div>
 
@@ -494,13 +494,13 @@ export default function HomeDashboardLayer({
                 Status Terbaru
               </h2>
             </div>
-            <button
-              type="button"
+            <Link
+              href="/status"
               className="font-semibold text-kutip-green text-[14px] leading-[20px] tracking-[0.041px] whitespace-nowrap hover:underline cursor-pointer"
               data-node-id="181:1184"
             >
               Lihat Semua
-            </button>
+            </Link>
           </div>
 
           {/* Cards List */}

@@ -6,15 +6,27 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import BottomNav from "@/components/BottomNav";
 import ConfirmScheduleOverlay from "@/components/ConfirmScheduleOverlay";
+import BookingSuccessOverlay from "@/components/BookingSuccessOverlay";
 
 export default function PenjadwalanLayer() {
-  const [showOverlay, setShowOverlay] = useState(false);
+  const [showConfirmOverlay, setShowConfirmOverlay] = useState(false);
+  const [showSuccessOverlay, setShowSuccessOverlay] = useState(false);
+
+  const handleConfirm = () => {
+    setShowConfirmOverlay(false);
+    setShowSuccessOverlay(true);
+  };
 
   return (
     <>
       <ConfirmScheduleOverlay
-        isOpen={showOverlay}
-        onClose={() => setShowOverlay(false)}
+        isOpen={showConfirmOverlay}
+        onClose={() => setShowConfirmOverlay(false)}
+        onConfirm={handleConfirm}
+      />
+      <BookingSuccessOverlay
+        isOpen={showSuccessOverlay}
+        onClose={() => setShowSuccessOverlay(false)}
       />
     <motion.div
       initial={{ opacity: 0 }}
@@ -164,7 +176,7 @@ export default function PenjadwalanLayer() {
           data-name="Background+HorizontalBorder"
         >
           <button
-            onClick={() => setShowOverlay(true)}
+            onClick={() => setShowConfirmOverlay(true)}
             className="bg-[#22c55e] flex flex-1 flex-col items-center justify-center min-w-px py-[16px] relative rounded-[16px] shadow-[0px_10px_15px_-3px_rgba(20,83,45,0.1),0px_4px_6px_-4px_rgba(20,83,45,0.1)]"
             data-node-id="181:1364"
             data-name="Button"

@@ -6,9 +6,10 @@ import { motion, AnimatePresence } from "motion/react";
 interface ConfirmScheduleOverlayProps {
   isOpen: boolean;
   onClose: () => void;
+  onConfirm: () => void;
 }
 
-export default function ConfirmScheduleOverlay({ isOpen, onClose }: ConfirmScheduleOverlayProps) {
+export default function ConfirmScheduleOverlay({ isOpen, onClose, onConfirm }: ConfirmScheduleOverlayProps) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -224,7 +225,10 @@ export default function ConfirmScheduleOverlay({ isOpen, onClose }: ConfirmSched
 
               {/* Buttons */}
               <div className="flex flex-col gap-[12px] items-start pb-[24px] pt-[8px] px-[24px] w-full">
-                <button className="bg-[#22c55e] flex gap-[8.01px] items-center justify-center py-[16px] relative rounded-[16px] shadow-[0px_10px_15px_-3px_#dcfce7,0px_4px_6px_-4px_#dcfce7] w-full">
+                <button
+                  onClick={onConfirm}
+                  className="bg-[#22c55e] flex gap-[8.01px] items-center justify-center py-[16px] relative rounded-[16px] shadow-[0px_10px_15px_-3px_#dcfce7,0px_4px_6px_-4px_#dcfce7] w-full"
+                >
                   <span className="font-bold text-white text-[16px] text-center leading-[24px]">
                     Ya, Konfirmasi
                   </span>

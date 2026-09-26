@@ -1,12 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import BottomNav from "@/components/BottomNav";
+import ConfirmScheduleOverlay from "@/components/ConfirmScheduleOverlay";
 
 export default function PenjadwalanLayer() {
+  const [showOverlay, setShowOverlay] = useState(false);
+
   return (
+    <>
+      <ConfirmScheduleOverlay
+        isOpen={showOverlay}
+        onClose={() => setShowOverlay(false)}
+      />
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -65,7 +74,7 @@ export default function PenjadwalanLayer() {
           <div className="flex items-end justify-between pt-[4px] relative shrink-0 w-full" data-node-id="181:1255" data-name="Container">
             <div className="h-[28px] leading-[0] relative shrink-0 w-[134.91px]" data-node-id="181:1256" data-name="Paragraph">
               <span className="font-bold text-[#252525] text-[18px] leading-[28px]" data-node-id="181:1257">
-                6 dari 8
+                1 dari 8
               </span>
               <span className="font-medium text-[#6b7280] text-[12px] tracking-[0.0117px] leading-[16px] ml-1" data-node-id="181:1258">
                 sesi tersisa
@@ -78,7 +87,7 @@ export default function PenjadwalanLayer() {
             </div>
           </div>
           <div className="bg-[#f3f4f6] h-[10px] overflow-clip relative rounded-full shrink-0 w-full" data-node-id="181:1261" data-name="Background">
-            <div className="absolute bg-[#22c55e] bottom-0 left-0 right-1/4 rounded-full top-0" data-node-id="181:1262" data-name="Background" />
+            <div className="absolute bg-[#22c55e] bottom-0 left-0 right-7/8 rounded-full top-0" data-node-id="181:1262" data-name="Background" />
           </div>
         </div>
 
@@ -155,6 +164,7 @@ export default function PenjadwalanLayer() {
           data-name="Background+HorizontalBorder"
         >
           <button
+            onClick={() => setShowOverlay(true)}
             className="bg-[#22c55e] flex flex-1 flex-col items-center justify-center min-w-px py-[16px] relative rounded-[16px] shadow-[0px_10px_15px_-3px_rgba(20,83,45,0.1),0px_4px_6px_-4px_rgba(20,83,45,0.1)]"
             data-node-id="181:1364"
             data-name="Button"
@@ -169,5 +179,6 @@ export default function PenjadwalanLayer() {
       {/* Bottom Navigation */}
       <BottomNav activeTab="jadwal" />
     </motion.div>
+    </>
   );
 }

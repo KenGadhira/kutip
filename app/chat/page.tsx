@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export default function ChatPetugas() {
   return (
@@ -428,7 +429,8 @@ export default function ChatPetugas() {
             data-node-id="297:734"
             data-name="Container"
           >
-            <button
+            <Link
+              href="/"
               className="bg-[#f9fafb] flex items-center justify-center rounded-[9999px] shrink-0 size-[40px]"
               data-node-id="297:735"
               data-name="Background"
@@ -441,7 +443,7 @@ export default function ChatPetugas() {
                 data-node-id="297:736"
                 data-name="SVG"
               />
-            </button>
+            </Link>
             <div className="relative shrink-0" data-node-id="297:738" data-name="Container">
               <div
                 className="border-2 border-[#f9f8f6] border-solid rounded-[9999px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] size-[44px]"

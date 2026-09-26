@@ -14,7 +14,7 @@ interface HomeDashboardLayerProps {
 
 // ponytail: mock dashboard data; connect with real user session & query endpoints when backend ready
 export default function HomeDashboardLayer({
-  userName = "Bapak Budi",
+  userName = "Bapak Atha",
   userLocation = "RT 05 - Wastukencana, Bandung",
   points = 1250,
 }: HomeDashboardLayerProps) {
@@ -61,7 +61,7 @@ export default function HomeDashboardLayer({
                 aria-label="Lihat Profil"
               >
                 <Image
-                  src="/assets/profile-avatar.png"
+                  src="/assets/avatar.png"
                   alt={`Foto profil ${userName}`}
                   width={48}
                   height={48}

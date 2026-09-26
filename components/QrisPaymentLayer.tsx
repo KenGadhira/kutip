@@ -215,7 +215,7 @@ export default function QrisPaymentLayer() {
               className="font-bold text-[#374151] text-[16px] tracking-[0.0469px] leading-[24px]"
               data-node-id="225:418"
             >
-              Simpan QR
+              Batalkan
             </span>
           </button>
           <button
@@ -226,7 +226,7 @@ export default function QrisPaymentLayer() {
               className="font-bold text-white text-[16px] leading-[24px]"
               data-node-id="225:421"
             >
-              Konfirmasi
+              Simpan QR
             </span>
           </button>
         </div>

@@ -15,9 +15,9 @@ interface ProfileLayerProps {
 
 // ponytail: mock profile items and logout; connect to backend session & user API when ready
 export default function ProfileLayer({
-  userName = "Bapak Budi Santoso",
+  userName = "Bapak Atha",
   userPhone = "+62 812 3456 7890",
-  userAvatar = "/assets/profile-avatar.png",
+  userAvatar = "/assets/avatar.png",
   onLogout,
 }: ProfileLayerProps) {
   const router = useRouter();

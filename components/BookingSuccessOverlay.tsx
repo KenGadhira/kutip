@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
 
 interface BookingSuccessOverlayProps {
   isOpen: boolean;
@@ -236,7 +237,7 @@ export default function BookingSuccessOverlay({ isOpen, onClose }: BookingSucces
               {/* Buttons */}
               <div className="absolute left-[24px] right-[24px] top-[704px] pt-[16px] flex flex-col items-start">
                 <div className="w-full flex flex-col gap-[12px] items-start">
-                  <button className="bg-[#22c55e] rounded-[12px] w-full py-[16px] flex gap-[8px] items-center justify-center relative shadow-[0px_10px_15px_-3px_#dcfce7,0px_4px_6px_-4px_#dcfce7]">
+                  <Link href="/payment" className="bg-[#22c55e] rounded-[12px] w-full py-[16px] flex gap-[8px] items-center justify-center relative shadow-[0px_10px_15px_-3px_#dcfce7,0px_4px_6px_-4px_#dcfce7]">
                     <span className="font-bold text-white text-[16px] text-center leading-[24px] tracking-[0.1094px] whitespace-nowrap">
                       Bayar Sekarang
                     </span>
@@ -248,12 +249,12 @@ export default function BookingSuccessOverlay({ isOpen, onClose }: BookingSucces
                         height={14}
                       />
                     </div>
-                  </button>
-                  <button className="bg-white border-2 border-[#f3f4f6] rounded-[12px] w-full py-[16px] flex items-center justify-center">
+                  </Link>
+                  <Link href="/status" className="bg-white border-2 border-[#f3f4f6] rounded-[12px] w-full py-[16px] flex items-center justify-center">
                     <span className="font-bold text-[#374151] text-[16px] text-center leading-[24px] tracking-[-0.0313px] whitespace-nowrap">
                       Lihat Status Jadwal
                     </span>
-                  </button>
+                  </Link>
                 </div>
               </div>
 

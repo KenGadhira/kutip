@@ -584,8 +584,8 @@ export default function HomeDashboardLayer({
                   </span>
                 </div>
 
-                <button
-                  type="button"
+                <Link
+                  href="/payment"
                   className="flex gap-[4px] items-center relative shrink-0 hover:underline cursor-pointer group active:scale-95 transition"
                   data-node-id="181:1200"
                   data-name="Button"
@@ -609,7 +609,7 @@ export default function HomeDashboardLayer({
                       className="block size-full"
                     />
                   </div>
-                </button>
+                </Link>
               </div>
             </div>
 

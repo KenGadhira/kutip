@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import BottomNav from "@/components/BottomNav";
+import Link from "next/link";
 
 export default function StatusPembayaranLayer() {
   return (
@@ -167,14 +168,15 @@ export default function StatusPembayaranLayer() {
                   Rp25.000
                 </p>
               </div>
-              <button
+              <Link
+                href="/payment"
                 className="bg-kutip-green flex items-center justify-center px-[20px] py-[10px] rounded-[12px] shadow-[0px_4px_6px_-1px_rgba(20,83,45,0.1),0px_2px_4px_-2px_rgba(20,83,45,0.1)]"
                 data-node-id="181:1403"
               >
                 <span className="font-bold text-[#f9f8f6] text-[12px] leading-[16px]">
                   Bayar Sekarang
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </article>

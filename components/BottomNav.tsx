@@ -49,7 +49,7 @@ export default function BottomNav({
         href="/"
         onClick={() => handleTabClick("home")}
         className={`flex flex-col gap-[6px] items-center relative shrink-0 hover:opacity-80 transition cursor-pointer ${
-          currentTab === "home" ? "text-[#477c2e]" : "text-[#9ca3af]"
+          currentTab === "home" ? "text-kutip-green" : "text-[#9ca3af]"
         }`}
         data-node-id="I225:590;231:74"
         data-name="Container"
@@ -90,7 +90,7 @@ export default function BottomNav({
         type="button"
         onClick={() => handleTabClick("jadwal")}
         className={`flex flex-col gap-[6px] items-center relative shrink-0 hover:opacity-80 transition cursor-pointer ${
-          currentTab === "jadwal" ? "text-[#477c2e]" : "text-[#9ca3af]"
+          currentTab === "jadwal" ? "text-kutip-green" : "text-[#9ca3af]"
         }`}
         data-node-id="I225:590;231:79"
         data-name="Container"
@@ -130,7 +130,7 @@ export default function BottomNav({
         type="button"
         onClick={() => handleTabClick("status")}
         className={`flex flex-col gap-[6px] items-center relative shrink-0 hover:opacity-80 transition cursor-pointer ${
-          currentTab === "status" ? "text-[#477c2e]" : "text-[#9ca3af]"
+          currentTab === "status" ? "text-kutip-green" : "text-[#9ca3af]"
         }`}
         data-node-id="I225:590;231:84"
         data-name="Container"
@@ -170,7 +170,7 @@ export default function BottomNav({
         type="button"
         onClick={() => handleTabClick("rewards")}
         className={`flex flex-col gap-[6px] items-center relative shrink-0 hover:opacity-80 transition cursor-pointer ${
-          currentTab === "rewards" ? "text-[#477c2e]" : "text-[#9ca3af]"
+          currentTab === "rewards" ? "text-kutip-green" : "text-[#9ca3af]"
         }`}
         data-node-id="I225:590;231:97"
         data-name="Container"
@@ -215,7 +215,7 @@ export default function BottomNav({
         href="/profile"
         onClick={() => handleTabClick("akun")}
         className={`flex flex-col gap-[6px] items-center relative shrink-0 hover:opacity-80 transition cursor-pointer ${
-          currentTab === "akun" ? "text-[#477c2e]" : "text-[#9ca3af]"
+          currentTab === "akun" ? "text-kutip-green" : "text-[#9ca3af]"
         }`}
         data-node-id="I225:590;231:91"
         data-name="Container"

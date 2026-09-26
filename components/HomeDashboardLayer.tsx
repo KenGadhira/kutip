@@ -131,9 +131,8 @@ export default function HomeDashboardLayer({
           </div>
 
           {/* Location Selector */}
-          <button
-            type="button"
-            className="bg-[#f9fafb] flex gap-[8px] items-center p-[10px] relative rounded-[8px] shrink-0 w-full hover:bg-gray-100 transition cursor-pointer text-left"
+          <div
+            className="bg-[#f9fafb] flex gap-[8px] items-center p-[10px] relative rounded-[8px] shrink-0 w-full transition text-left"
             data-node-id="181:1101"
             data-name="Background"
             aria-label="Pilih Lokasi"
@@ -168,15 +167,8 @@ export default function HomeDashboardLayer({
               data-node-id="181:1106"
               data-name="Img"
             >
-              <Image
-                src="/assets/home/icon-chevron-down.svg"
-                alt="Pilih lokasi"
-                width={12}
-                height={12}
-                className="block size-full"
-              />
             </div>
-          </button>
+          </div>
         </header>
 
         {/* Points Card */}
@@ -191,32 +183,28 @@ export default function HomeDashboardLayer({
             data-node-id="181:1109"
             data-name="Container"
           >
+            
             <div
-              className="bg-[rgba(71,124,46,0.1)] flex items-center justify-center relative rounded-full shrink-0 size-[40px]"
-              data-node-id="181:1110"
-              data-name="Overlay"
+              className="relative shrink-0 size-[16px]"
+              data-node-id="181:1111"
+              data-name="Img"
             >
-              <div
-                className="relative shrink-0 size-[16px]"
-                data-node-id="181:1111"
-                data-name="Img"
-              >
-                <Image
-                  src="/assets/home/icon-leaf.svg"
-                  alt="Ikon Poin Daun"
-                  width={16}
-                  height={16}
-                  className="block size-full"
-                />
-              </div>
+              <Image
+                src="/assets/home/icon-points.svg"
+                alt="Ikon Poin Koin"
+                width={16}
+                height={16}
+                className="block size-full"
+              />
             </div>
+            
             <div
               className="flex items-baseline gap-[4px] relative shrink-0"
               data-node-id="181:1113"
               data-name="Container"
             >
               <span
-                className="font-bold text-[#477c2e] text-[18px] leading-[28px]"
+                className="font-bold text-kutip-dark text-[18px] leading-[28px]"
                 data-node-id="181:1117"
               >
                 {points.toLocaleString("id-ID")}
@@ -232,7 +220,7 @@ export default function HomeDashboardLayer({
 
           <button
             type="button"
-            className="bg-[#477c2e] flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-full shrink-0 shadow-[0px_4px_6px_-1px_rgba(20,83,45,0.1),0px_2px_4px_-2px_rgba(20,83,45,0.1)] hover:bg-[#3d6b27] transition active:scale-95 cursor-pointer"
+            className="bg-kutip-green flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-full shrink-0 shadow-[0px_4px_6px_-1px_rgba(20,83,45,0.1),0px_2px_4px_-2px_rgba(20,83,45,0.1)] hover:bg-[#3d6b27] transition active:scale-95 cursor-pointer"
             data-node-id="181:1119"
             data-name="Button"
           >
@@ -269,7 +257,7 @@ export default function HomeDashboardLayer({
           >
             {/* Banner 1 */}
             <div
-              className="bg-[#477c2e] min-w-[285px] w-[285px] h-[130px] rounded-[16px] p-[20px] relative overflow-hidden flex flex-col justify-between shrink-0 snap-start"
+              className="bg-[#477C2E] min-w-[285px] w-[285px] h-[130px] rounded-[16px] p-[20px] relative overflow-hidden flex flex-col justify-between shrink-0 snap-start"
               data-node-id="181:1124"
               data-name="Background"
             >
@@ -463,198 +451,26 @@ export default function HomeDashboardLayer({
           >
             <div
               className={`h-[6px] rounded-full transition-all duration-300 ${
-                activeBanner === 0 ? "w-[24px] bg-[#477c2e]" : "w-[6px] bg-[#d1d5db]"
+                activeBanner === 0 ? "w-[24px] bg-kutip-green" : "w-[6px] bg-[#d1d5db]"
               }`}
               data-node-id="181:1147"
               data-name="Background"
             />
             <div
               className={`h-[6px] rounded-full transition-all duration-300 ${
-                activeBanner === 1 ? "w-[24px] bg-[#477c2e]" : "w-[6px] bg-[#d1d5db]"
+                activeBanner === 1 ? "w-[24px] bg-kutip-green" : "w-[6px] bg-[#d1d5db]"
               }`}
               data-node-id="181:1148"
               data-name="Background"
             />
             <div
               className={`h-[6px] rounded-full transition-all duration-300 ${
-                activeBanner === 2 ? "w-[24px] bg-[#477c2e]" : "w-[6px] bg-[#d1d5db]"
+                activeBanner === 2 ? "w-[24px] bg-kutip-green" : "w-[6px] bg-[#d1d5db]"
               }`}
               data-node-id="181:1149"
               data-name="Background"
             />
           </div>
-        </section>
-
-        {/* Action Grid (2x2) */}
-        <section
-          className="gap-x-[16px] gap-y-[16px] grid grid-cols-2 pt-[16px] relative shrink-0 w-[335px]"
-          data-node-id="181:1150"
-          data-name="Container"
-          aria-label="Menu Utama"
-        >
-          {/* Penjadwalan */}
-          <button
-            type="button"
-            className="bg-[#f9f8f6] border border-[#f3f4f6] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col items-start justify-start min-h-[122px] overflow-hidden p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer text-left"
-            data-node-id="181:1151"
-            data-name="Background+Border+Shadow"
-            aria-label="Penjadwalan"
-          >
-            <div
-              className="flex flex-col items-start relative shrink-0 z-10"
-              data-node-id="181:1156"
-              data-name="Container"
-            >
-              <p
-                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-left tracking-[0.0684px] whitespace-nowrap"
-                data-node-id="181:1157"
-              >
-                Penjadwalan
-              </p>
-            </div>
-            <div
-              className="absolute flex items-center justify-center left-[97px] top-[68px] rounded-[16px] size-[56px] pointer-events-none"
-              data-node-id="181:1153"
-              data-name="Background"
-            >
-              <div
-                className="h-[93px] relative shrink-0 w-[81px]"
-                data-node-id="181:1154"
-                data-name="Img"
-              >
-                <Image
-                  src="/assets/home/menu-penjadwalan.svg"
-                  alt=""
-                  width={81}
-                  height={93}
-                  className="block size-full"
-                />
-              </div>
-            </div>
-          </button>
-
-          {/* Pembayaran */}
-          <button
-            type="button"
-            className="bg-[#f9f8f6] border border-[#f3f4f6] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col items-start justify-start min-h-[122px] overflow-hidden p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer text-left"
-            data-node-id="272:300"
-            data-name="Background+Border+Shadow"
-            aria-label="Pembayaran"
-          >
-            <div
-              className="flex flex-col items-start relative shrink-0 z-10"
-              data-node-id="272:304"
-              data-name="Container"
-            >
-              <p
-                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-left tracking-[0.0684px] whitespace-nowrap"
-                data-node-id="272:305"
-              >
-                Pembayaran
-              </p>
-            </div>
-            <div
-              className="absolute flex items-center justify-center left-[97px] top-[68px] rounded-[16px] size-[56px] pointer-events-none"
-              data-node-id="272:301"
-              data-name="Background"
-            >
-              <div
-                className="h-[78.67px] relative shrink-0 w-[59px]"
-                data-node-id="272:306"
-                data-name="Img"
-              >
-                <Image
-                  src="/assets/home/menu-pembayaran.svg"
-                  alt=""
-                  width={59}
-                  height={79}
-                  className="block size-full"
-                />
-              </div>
-            </div>
-          </button>
-
-          {/* Hadiah */}
-          <button
-            type="button"
-            className="bg-[#f9f8f6] border border-[#f3f4f6] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col items-start justify-start min-h-[122px] overflow-hidden p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer text-left"
-            data-node-id="272:315"
-            data-name="Background+Border+Shadow"
-            aria-label="Hadiah"
-          >
-            <div
-              className="flex flex-col items-start relative shrink-0 z-10"
-              data-node-id="272:319"
-              data-name="Container"
-            >
-              <p
-                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-left tracking-[0.0684px] whitespace-nowrap"
-                data-node-id="272:320"
-              >
-                Hadiah
-              </p>
-            </div>
-            <div
-              className="absolute flex items-center justify-center left-[97px] top-[68px] rounded-[16px] size-[56px] pointer-events-none"
-              data-node-id="272:316"
-              data-name="Background"
-            >
-              <div
-                className="relative shrink-0 size-[76px]"
-                data-node-id="272:327"
-                data-name="Img"
-              >
-                <Image
-                  src="/assets/home/menu-hadiah.svg"
-                  alt=""
-                  width={76}
-                  height={76}
-                  className="block size-full"
-                />
-              </div>
-            </div>
-          </button>
-
-          {/* Riwayat */}
-          <button
-            type="button"
-            className="bg-[#f9f8f6] border border-[#f3f4f6] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col items-start justify-start min-h-[122px] overflow-hidden p-[16px] relative rounded-[16px] hover:border-[#477c2e]/40 transition active:scale-95 cursor-pointer text-left"
-            data-node-id="272:321"
-            data-name="Background+Border+Shadow"
-            aria-label="Riwayat"
-          >
-            <div
-              className="flex flex-col items-start relative shrink-0 z-10"
-              data-node-id="272:325"
-              data-name="Container"
-            >
-              <p
-                className="font-semibold text-[#374151] text-[14px] leading-[20px] text-left tracking-[0.0684px] whitespace-nowrap"
-                data-node-id="272:326"
-              >
-                Riwayat
-              </p>
-            </div>
-            <div
-              className="absolute flex items-center justify-center left-[97px] top-[68px] rounded-[16px] size-[56px] pointer-events-none"
-              data-node-id="272:322"
-              data-name="Background"
-            >
-              <div
-                className="relative shrink-0 size-[68px]"
-                data-node-id="272:330"
-                data-name="Img"
-              >
-                <Image
-                  src="/assets/home/menu-riwayat.svg"
-                  alt=""
-                  width={68}
-                  height={68}
-                  className="block size-full"
-                />
-              </div>
-            </div>
-          </button>
         </section>
 
         {/* Status Terbaru Section */}
@@ -680,7 +496,7 @@ export default function HomeDashboardLayer({
             </div>
             <button
               type="button"
-              className="font-semibold text-[#477c2e] text-[14px] leading-[20px] tracking-[0.041px] whitespace-nowrap hover:underline cursor-pointer"
+              className="font-semibold text-kutip-green text-[14px] leading-[20px] tracking-[0.041px] whitespace-nowrap hover:underline cursor-pointer"
               data-node-id="181:1184"
             >
               Lihat Semua
@@ -775,7 +591,7 @@ export default function HomeDashboardLayer({
                   data-name="Button"
                 >
                   <span
-                    className="font-bold text-[#477c2e] text-[12px] leading-[16px] text-center"
+                    className="font-bold text-kutip-green text-[12px] leading-[16px] text-center"
                     data-node-id="181:1201"
                   >
                     Bayar Sekarang

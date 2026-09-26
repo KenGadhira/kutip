@@ -32,6 +32,8 @@ export default function BottomNav({
       ? "jadwal"
       : pathname === "/status"
       ? "status"
+      : pathname === "/rewards"
+      ? "rewards"
       : pathname === "/"
       ? "home"
       : internalTab);
@@ -172,8 +174,8 @@ export default function BottomNav({
       </Link>
 
       {/* Rewards */}
-      <button
-        type="button"
+      <Link
+        href="/rewards"
         onClick={() => handleTabClick("rewards")}
         className={`flex flex-col gap-[6px] items-center relative shrink-0 hover:opacity-80 transition cursor-pointer ${
           currentTab === "rewards" ? "text-kutip-green" : "text-[#9ca3af]"
@@ -181,6 +183,7 @@ export default function BottomNav({
         data-node-id="I225:590;231:97"
         data-name="Container"
         aria-label="Rewards"
+        aria-current={currentTab === "rewards" ? "page" : undefined}
       >
         <div
           className="relative shrink-0 size-[17px]"
@@ -214,7 +217,7 @@ export default function BottomNav({
         >
           Rewards
         </span>
-      </button>
+      </Link>
 
       {/* Akun */}
       <Link

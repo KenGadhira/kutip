@@ -1,389 +1,283 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { motion } from "motion/react";
 import BottomNav from "@/components/BottomNav";
+import MenuItemList, { type MenuItem } from "@/components/MenuItemList";
 
 interface ProfileLayerProps {
-  onQrClick?: () => void;
+  userName?: string;
+  userPhone?: string;
+  userAvatar?: string;
+  onLogout?: () => void;
 }
 
-export default function ProfileLayer({ onQrClick }: ProfileLayerProps) {
-  // ponytail: local state for profile info; replace with backend sync on auth integration
-  const [isEditing, setIsEditing] = useState(false);
-  const [userName, setUserName] = useState("Bapak Jarwo");
-  const [userLocation, setUserLocation] = useState("RT 05 - Wastukencana, Bandung");
+// ponytail: mock profile items and logout; connect to backend session & user API when ready
+export default function ProfileLayer({
+  userName = "Bapak Budi Santoso",
+  userPhone = "+62 812 3456 7890",
+  userAvatar = "/assets/profile-avatar.png",
+  onLogout,
+}: ProfileLayerProps) {
+  const router = useRouter();
+
+  const handleLogout = () => {
+    if (onLogout) {
+      onLogout();
+    } else {
+      router.push("/login");
+    }
+  };
+
+  const accountSettings: MenuItem[] = [
+    {
+      id: "profile",
+      name: "Profil Saya",
+      icon: "/assets/profile/icon-profile.svg",
+      nodeId: "181:1766",
+    },
+    {
+      id: "address",
+      name: "Alamat Tersimpan",
+      icon: "/assets/profile/icon-address.svg",
+      nodeId: "181:1775",
+    },
+    {
+      id: "transactions",
+      name: "Riwayat Transaksi",
+      icon: "/assets/profile/icon-history.svg",
+      nodeId: "181:1784",
+    },
+    {
+      id: "points",
+      name: "Riwayat Penukaran Poin",
+      icon: "/assets/profile/icon-points.svg",
+      nodeId: "181:1793",
+    },
+  ];
+
+  const infoSettings: MenuItem[] = [
+    {
+      id: "help",
+      name: "Bantuan dan FAQ",
+      icon: "/assets/profile/icon-help.svg",
+      nodeId: "181:1806",
+    },
+    {
+      id: "terms",
+      name: "Syarat dan Ketentuan",
+      icon: "/assets/profile/icon-terms.svg",
+      nodeId: "181:1815",
+    },
+    {
+      id: "privacy",
+      name: "Kebijakan Privasi",
+      icon: "/assets/profile/icon-privacy.svg",
+      nodeId: "181:1824",
+    },
+    {
+      id: "notifications",
+      name: "Pengaturan Notifikasi",
+      icon: "/assets/profile/icon-notification.svg",
+      nodeId: "181:1833",
+    },
+  ];
 
   return (
-    <div
-      className="w-full sm:max-w-[375px] h-screen h-dvh sm:h-[812px] bg-[#f9f8f6] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border-0 sm:border sm:border-black/5"
-      data-node-id="95:133"
-      data-name="Profile Final"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="w-full sm:max-w-[375px] h-screen h-dvh sm:h-[812px] bg-[#f5f6f4] sm:rounded-[36px] sm:shadow-2xl overflow-hidden flex flex-col relative mx-auto select-none border-0 sm:border sm:border-black/5"
+      data-node-id="181:1744"
+      data-name="Akun & Profile Screens Final"
     >
-      {/* Main Content Area */}
+      {/* Scrollable Content Container */}
       <main
-        className="bg-[#f9f8f6] flex-1 overflow-y-auto px-4 pt-8 pb-6 flex flex-col gap-6 relative z-10"
-        data-node-id="95:173"
+        className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col items-center gap-[32px] pb-[32px] pt-[24px] px-[24px] relative w-full"
+        data-node-id="181:1745"
         data-name="Main"
       >
         {/* Profile Card */}
         <section
-          className="flex flex-col gap-2 w-full"
-          data-node-id="95:174"
-          data-name="Profile Card"
+          className="bg-[#f9f8f6] border border-[#f3f4f6] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex gap-[20px] items-center p-[24px] relative rounded-[40px] shrink-0 w-full"
+          data-node-id="181:1746"
+          data-name="Background+Border+Shadow"
         >
-          {/* Avatar */}
+          {/* Avatar with Camera Badge */}
           <div
-            className="flex items-end w-[343px]"
-            data-node-id="95:175"
-            data-name="Top Row"
+            className="relative shrink-0"
+            data-node-id="181:1747"
+            data-name="Container"
           >
             <div
-              className="relative w-[83px] h-[83px] rounded-full overflow-hidden shrink-0 shadow-sm"
-              data-node-id="95:176"
-              data-name="image 5"
+              className="border-4 border-[rgba(71,124,46,0.1)] size-[75px] rounded-full overflow-hidden relative shrink-0"
+              data-node-id="181:1748"
+              data-name="Profile Picture"
             >
               <Image
-                src="/assets/profile-avatar.png"
+                src={userAvatar}
                 alt="Foto Profil"
-                width={83}
-                height={83}
-                className="w-full h-full object-cover pointer-events-none rounded-full"
+                width={80}
+                height={80}
+                className="w-full h-full object-cover pointer-events-none"
                 priority
               />
             </div>
+            <button
+              type="button"
+              className="absolute bg-[#22c55e] border-2 border-[#f9f8f6] bottom-0 right-0 rounded-full size-[24px] flex items-center justify-center cursor-pointer hover:brightness-110 active:scale-95 transition"
+              data-node-id="181:1749"
+              data-name="Background+Border"
+              aria-label="Ubah Foto Profil"
+            >
+              <div
+                className="relative size-[10px] shrink-0 flex items-center justify-center"
+                data-node-id="181:1750"
+                data-name="Img"
+              >
+                <Image
+                  src="/assets/profile/icon-camera.svg"
+                  alt=""
+                  width={10}
+                  height={10}
+                  className="size-[10px]"
+                />
+              </div>
+            </button>
           </div>
 
           {/* User Details */}
           <div
-            className="flex flex-col gap-1 w-full"
-            data-node-id="95:177"
-            data-name="User Details"
+            className="flex flex-col gap-[4px] items-start shrink-0 min-w-0 flex-1"
+            data-node-id="181:1752"
+            data-name="Container"
           >
             <div
-              className="flex items-center gap-4 px-1 w-full"
-              data-node-id="95:178"
-              data-name="Heading 3"
+              className="flex flex-col items-start w-full"
+              data-node-id="181:1753"
+              data-name="Heading 2"
             >
-              {isEditing ? (
-                <input
-                  type="text"
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
-                  onBlur={() => setIsEditing(false)}
-                  autoFocus
-                  className="text-[24px] font-semibold text-[#2b2b2b] leading-[28px] bg-white border border-[#92aa56] rounded px-2 py-0.5 outline-none w-full max-w-[230px]"
-                />
-              ) : (
-                <h1
-                  className="text-[24px] font-semibold text-[#2b2b2b] leading-[28px] tracking-tight whitespace-nowrap"
-                  data-node-id="95:179"
-                >
-                  {userName}
-                </h1>
-              )}
-
-              <button
-                type="button"
-                onClick={() => setIsEditing(!isEditing)}
-                className="w-6 h-6 flex items-center justify-center hover:opacity-70 transition cursor-pointer active:scale-95"
-                data-node-id="95:180"
-                data-name="Back Arrow"
-                aria-label="Edit Nama Profil"
+              <h1
+                className="font-bold text-[#111827] text-[20px] leading-[25px] tracking-[0.0781px] break-words"
+                data-node-id="181:1754"
               >
-                <div
-                  className="w-6 h-6 relative shrink-0"
-                  data-node-id="95:181"
-                  data-name="gravity-ui:pencil-to-square"
-                >
-                  <Image
-                    src="/assets/icon-edit.svg"
-                    alt="Edit"
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                  />
-                </div>
-              </button>
-            </div>
-
-            <div
-              className="flex items-center px-1 w-full"
-              data-node-id="95:183"
-              data-name="Heading 4"
-            >
-              {isEditing ? (
-                <input
-                  type="text"
-                  value={userLocation}
-                  onChange={(e) => setUserLocation(e.target.value)}
-                  className="text-[16px] font-semibold text-[#2b2b2b]/70 leading-[28px] bg-white border border-[#92aa56] rounded px-2 py-0.5 outline-none w-full max-w-[230px]"
-                />
-              ) : (
-                <p
-                  className="text-[16px] font-semibold text-[#2b2b2b]/70 leading-[28px] whitespace-nowrap"
-                  data-node-id="95:184"
-                >
-                  {userLocation}
-                </p>
-              )}
-            </div>
-          </div>
-
-          {/* Line Break */}
-          <div
-            className="bg-[#e6e6e6] h-[2px] rounded-[10px] w-full"
-            data-node-id="157:213"
-            data-name="Line Break"
-          />
-        </section>
-
-        {/* Stats Card - Bulan Ini */}
-        <section
-          className="flex flex-col gap-1 w-full"
-          data-node-id="95:185"
-          data-name="Stats Card"
-        >
-          <div
-            className="flex items-center px-1 w-full"
-            data-node-id="157:197"
-            data-name="Heading 3"
-          >
-            <h2
-              className="text-[20px] font-semibold text-[#2b2b2b] leading-[28px] whitespace-nowrap"
-              data-node-id="157:198"
-            >
-              Bulan Ini
-            </h2>
-          </div>
-          <div
-            className="flex gap-6 items-center px-1 w-full"
-            data-node-id="157:200"
-            data-name="Row"
-          >
-            <div
-              className="flex flex-col items-start justify-center"
-              data-node-id="157:202"
-              data-name="Individual Status"
-            >
-              <span
-                className="text-[13px] font-normal text-[#2b2b2b]/70 leading-[20px]"
-                data-node-id="157:201"
-              >
-                Berat
-              </span>
-              <span
-                className="text-[15px] font-semibold text-[#2b2b2b] leading-[28px]"
-                data-node-id="157:203"
-              >
-                2 Ton
-              </span>
+                {userName}
+              </h1>
             </div>
             <div
-              className="flex flex-col items-start justify-center"
-              data-node-id="157:204"
-              data-name="Individual Status"
+              className="flex flex-col items-start pb-[4px] w-full"
+              data-node-id="181:1755"
+              data-name="Container"
             >
-              <span
-                className="text-[13px] font-normal text-[#2b2b2b]/70 leading-[20px]"
-                data-node-id="157:205"
+              <p
+                className="font-medium text-[#6b7280] text-[14px] leading-[20px] tracking-[-0.0273px] whitespace-nowrap"
+                data-node-id="181:1756"
               >
-                Poin
-              </span>
-              <span
-                className="text-[15px] font-semibold text-[#2b2b2b] leading-[28px]"
-                data-node-id="157:206"
-              >
-                150.000
-              </span>
-            </div>
-            <div
-              className="flex flex-col items-start justify-center"
-              data-node-id="157:207"
-              data-name="Individual Status"
-            >
-              <span
-                className="text-[13px] font-normal text-[#2b2b2b]/70 leading-[20px]"
-                data-node-id="157:208"
-              >
-                Lebar
-              </span>
-              <span
-                className="text-[15px] font-semibold text-[#2b2b2b] leading-[28px]"
-                data-node-id="157:209"
-              >
-                1.5 Meter
-              </span>
+                {userPhone}
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Stats Card - Ton Terkumpul */}
+        {/* Pengaturan Akun Section */}
         <section
-          className="flex flex-col gap-2 w-full"
-          data-node-id="157:180"
-          data-name="Stats Card"
+          className="flex flex-col gap-[16px] items-start w-full"
+          data-node-id="181:1762"
+          data-name="Container"
         >
           <div
-            className="flex items-center px-1 w-full"
-            data-node-id="157:181"
+            className="flex flex-col items-start w-full"
+            data-node-id="181:1763"
             data-name="Heading 3"
           >
             <h2
-              className="text-[20px] font-normal text-[#2b2b2b] leading-[28px] whitespace-nowrap"
-              data-node-id="157:182"
+              className="font-bold text-[#9ca3af] text-[12px] uppercase tracking-[1.2px] leading-[16px]"
+              data-node-id="181:1764"
             >
-              Ton Terkumpul
+              Pengaturan Akun
             </h2>
           </div>
-          <div
-            className="bg-[#e6e6e6] h-[114px] rounded-[8px] w-full flex items-center justify-center relative overflow-hidden px-1"
-            data-node-id="157:183"
-            data-name="Card"
-          >
-            <div
-              className="relative w-[320px] h-[123px] overflow-hidden shrink-0 flex items-center justify-center"
-              data-node-id="157:184"
-              data-name="linechart-wrapper"
-            >
-              <div
-                className="relative w-[320px] h-[123px] overflow-hidden shrink-0"
-                data-node-id="157:185"
-                data-name="linechart"
-              >
-                <div
-                  className="absolute left-[10px] top-[82.4px] w-[60px] flex flex-col items-center"
-                  data-node-id="157:186"
-                  data-name="Frame"
-                >
-                  <span
-                    className="font-bold text-[14px] text-[#333333] text-center"
-                    data-node-id="157:187"
-                  >
-                    84
-                  </span>
-                </div>
-                <div
-                  className="absolute left-[70px] top-[96.8px] w-[60px] flex flex-col items-center"
-                  data-node-id="157:188"
-                  data-name="Frame"
-                >
-                  <span
-                    className="font-bold text-[14px] text-[#333333] text-center"
-                    data-node-id="157:189"
-                  >
-                    78
-                  </span>
-                </div>
-                <div
-                  className="absolute left-[130px] top-[9.6px] w-[60px] flex flex-col items-center"
-                  data-node-id="157:190"
-                  data-name="Frame"
-                >
-                  <span
-                    className="font-bold text-[14px] text-[#333333] text-center"
-                    data-node-id="157:191"
-                  >
-                    96
-                  </span>
-                </div>
-                <div
-                  className="absolute left-[190px] top-[65.6px] w-[60px] flex flex-col items-center"
-                  data-node-id="157:192"
-                  data-name="Frame"
-                >
-                  <span
-                    className="font-bold text-[14px] text-[#333333] text-center"
-                    data-node-id="157:193"
-                  >
-                    91
-                  </span>
-                </div>
-                <div
-                  className="absolute left-[250px] top-[65.6px] w-[60px] flex flex-col items-center"
-                  data-node-id="157:194"
-                  data-name="Frame"
-                >
-                  <span
-                    className="font-bold text-[14px] text-[#333333] text-center"
-                    data-node-id="157:195"
-                  >
-                    91
-                  </span>
-                </div>
-                <div
-                  className="absolute left-[40px] top-[49.6px] w-[240px] h-[43.2px]"
-                  data-node-id="157:196"
-                  data-name="Vector"
-                >
-                  <Image
-                    src="/assets/chart-line.svg"
-                    alt="Grafik Garis Ton Terkumpul"
-                    width={242}
-                    height={45}
-                    className="block w-full h-full max-w-none"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+
+          <MenuItemList items={accountSettings} containerNodeId="181:1765" />
         </section>
 
-        {/* Card - Akun QR */}
+        {/* Informasi Section */}
         <section
-          className="flex flex-col gap-2 w-full"
-          data-node-id="95:189"
-          data-name="Card"
+          className="flex flex-col gap-[16px] items-start w-full"
+          data-node-id="181:1802"
+          data-name="Container"
         >
           <div
-            className="flex items-center px-1 w-full"
-            data-node-id="95:190"
+            className="flex flex-col items-start w-full"
+            data-node-id="181:1803"
             data-name="Heading 3"
           >
             <h2
-              className="text-[20px] font-normal text-[#2b2b2b] leading-[28px] whitespace-nowrap"
-              data-node-id="95:191"
+              className="font-bold text-[#9ca3af] text-[12px] uppercase tracking-[1.2px] leading-[16px]"
+              data-node-id="181:1804"
             >
-              Akun QR
+              Informasi
             </h2>
           </div>
 
-          {onQrClick ? (
-            <button
-              type="button"
-              onClick={onQrClick}
-              className="bg-[#e6e6e6] h-[136px] rounded-[8px] w-full flex items-center justify-center px-1 shadow-sm transition hover:brightness-95 active:scale-[0.99] cursor-pointer"
-              data-node-id="95:192"
-              data-name="Card"
+          <MenuItemList items={infoSettings} containerNodeId="181:1805" />
+        </section>
+
+        {/* Action & Footer Section */}
+        <section
+          className="flex flex-col gap-[24px] items-start pb-[16px] w-full"
+          data-node-id="181:1842"
+          data-name="Container"
+        >
+          {/* Keluar Akun Button */}
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="bg-[#ef4444] border border-[#ef4444] flex gap-[12px] items-center justify-center p-[20px] rounded-[24px] w-full text-white cursor-pointer hover:bg-[#dc2626] active:scale-[0.98] transition shadow-sm"
+            data-node-id="181:1843"
+            data-name="Button"
+          >
+            <div
+              className="size-[16px] relative shrink-0 flex items-center justify-center"
+              data-node-id="181:1844"
+              data-name="Img"
             >
-              <span
-                className="text-[20px] font-semibold text-[#2b2b2b] leading-[28px] whitespace-nowrap"
-                data-node-id="95:193"
-              >
-                Flow ke page QR
-              </span>
-            </button>
-          ) : (
-            <Link
-              href="/qr"
-              className="bg-[#e6e6e6] h-[136px] rounded-[8px] w-full flex items-center justify-center px-1 shadow-sm transition hover:brightness-95 active:scale-[0.99] cursor-pointer"
-              data-node-id="95:192"
-              data-name="Card"
+              <Image
+                src="/assets/profile/icon-logout.svg"
+                alt=""
+                width={16}
+                height={16}
+                className="size-[16px]"
+              />
+            </div>
+            <span
+              className="font-bold text-[#f9f8f6] text-[16px] leading-[24px] text-center"
+              data-node-id="181:1847"
             >
-              <span
-                className="text-[20px] font-semibold text-[#2b2b2b] leading-[28px] whitespace-nowrap"
-                data-node-id="95:193"
-              >
-                Flow ke page QR
-              </span>
-            </Link>
-          )}
+              Keluar Akun
+            </span>
+          </button>
+
+          {/* Footer Branding */}
+          <div
+            className="flex flex-col items-center w-full"
+            data-node-id="181:1848"
+            data-name="Container"
+          >
+            <p
+              className="font-medium text-[#9ca3af] text-[10px] leading-[15px] tracking-[0.0098px] text-center"
+              data-node-id="181:1849"
+            >
+              KUTIP App — Made with ❤️ by TWISE
+            </p>
+          </div>
         </section>
       </main>
 
       {/* Bottom Navigation */}
       <BottomNav activeTab="akun" />
-    </div>
+    </motion.div>
   );
 }

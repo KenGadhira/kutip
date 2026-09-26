@@ -30,6 +30,8 @@ export default function BottomNav({
       ? "akun"
       : pathname === "/penjadwalan"
       ? "jadwal"
+      : pathname === "/status"
+      ? "status"
       : pathname === "/"
       ? "home"
       : internalTab);
@@ -129,8 +131,8 @@ export default function BottomNav({
       </Link>
 
       {/* Status */}
-      <button
-        type="button"
+      <Link
+        href="/status"
         onClick={() => handleTabClick("status")}
         className={`flex flex-col gap-[6px] items-center relative shrink-0 hover:opacity-80 transition cursor-pointer ${
           currentTab === "status" ? "text-kutip-green" : "text-[#9ca3af]"
@@ -138,6 +140,7 @@ export default function BottomNav({
         data-node-id="I225:590;231:84"
         data-name="Container"
         aria-label="Status"
+        aria-current={currentTab === "status" ? "page" : undefined}
       >
         <div
           className="relative shrink-0 size-[17px]"
@@ -166,7 +169,7 @@ export default function BottomNav({
         >
           Status
         </span>
-      </button>
+      </Link>
 
       {/* Rewards */}
       <button

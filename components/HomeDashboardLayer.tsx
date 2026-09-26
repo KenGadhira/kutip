@@ -32,7 +32,7 @@ export default function HomeDashboardLayer({
     >
       {/* Scrollable Content Container */}
       <main
-        className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col items-center gap-[16px] pb-[24px] relative w-full"
+        className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col items-center gap-[16px] sm:pb-[24px] pb-[88px] relative w-full"
         data-node-id="231:243"
         data-name="Content"
       >

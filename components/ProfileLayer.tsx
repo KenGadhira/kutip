@@ -95,7 +95,7 @@ export default function ProfileLayer({
     >
       {/* Scrollable Content Container */}
       <main
-        className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col items-center gap-[32px] pb-[32px] pt-[24px] px-[24px] relative w-full"
+        className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col items-center gap-[32px] sm:pb-[24px] pb-[88px] pt-[24px] px-[24px] relative w-full"
         data-node-id="181:1745"
         data-name="Main"
       >

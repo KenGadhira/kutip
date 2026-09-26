@@ -409,7 +409,7 @@ export default function StatusPembayaranLayer() {
             >
               <div className="flex gap-[8px] items-center" data-node-id="181:1456">
                 <Image
-                  src="/assets/status/collector.png"
+                  src="/assets/mark.png"
                   alt="Petugas"
                   width={32}
                   height={32}
@@ -421,11 +421,12 @@ export default function StatusPembayaranLayer() {
                     Petugas
                   </p>
                   <p className="font-bold text-[#252525] text-[12px] leading-[16px] tracking-[0.082px]">
-                    Pak Ahmad
+                    Pak Mark
                   </p>
                 </div>
               </div>
-              <button
+              <Link
+                href="/chat"
                 className="bg-[#3b82f6] flex gap-[4px] items-center p-[10px] rounded-[12px] shadow-[0px_4px_6px_-1px_#bfdbfe,0px_2px_4px_-2px_#bfdbfe]"
                 data-node-id="181:1463"
               >
@@ -440,7 +441,7 @@ export default function StatusPembayaranLayer() {
                 <span className="font-bold text-[#f9f8f6] text-[12px] leading-[16px] tracking-[0.0469px]">
                   Hubungi
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </article>

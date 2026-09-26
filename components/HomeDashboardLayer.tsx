@@ -101,33 +101,65 @@ export default function HomeDashboardLayer({
               </div>
             </div>
 
-            {/* Notification Bell */}
-            <button
-              type="button"
-              className="bg-[#f3f4f6] flex items-center justify-center relative rounded-full shrink-0 size-[40px] hover:bg-gray-200 transition cursor-pointer active:scale-95"
-              data-node-id="181:1097"
-              data-name="Background"
-              aria-label="Notifikasi"
+            {/* Notification Icons */}
+            <div
+              className="flex gap-px items-center"
+              data-node-id="257:743"
             >
-              <div
-                className="h-[18px] w-[15.75px] relative shrink-0"
-                data-node-id="181:1098"
-                data-name="Img"
+              {/* Comment Button */}
+              <Link
+                href="/chat"
+                className="bg-[#f3f4f6] flex items-center justify-center relative rounded-full shrink-0 size-[40px] hover:bg-gray-200 transition cursor-pointer active:scale-95"
+                data-node-id="257:744"
+                data-name="Background"
+                aria-label="Pesan"
               >
-                <Image
-                  src="/assets/home/icon-bell.svg"
-                  alt="Notifikasi"
-                  width={15.75}
-                  height={18}
-                  className="block size-full"
+                <div
+                  className="relative shrink-0 size-[18px]"
+                  data-node-id="257:753"
+                >
+                  <Image
+                    src="/assets/home/icon-comment.svg"
+                    alt="Pesan"
+                    width={18}
+                    height={18}
+                    className="block size-full"
+                  />
+                </div>
+                <div
+                  className="absolute bg-[#ef4444] border-2 border-[#f9f8f6] right-[8px] top-[8px] rounded-full size-[10px]"
+                  data-node-id="257:747"
                 />
-              </div>
-              <div
-                className="absolute bg-[#ef4444] border-2 border-[#f9f8f6] right-[8px] top-[8px] rounded-full size-[10px]"
-                data-node-id="181:1100"
-                data-name="Notification Indicator"
-              />
-            </button>
+              </Link>
+
+              {/* Notification Bell */}
+              <button
+                type="button"
+                className="bg-[#f3f4f6] flex items-center justify-center relative rounded-full shrink-0 size-[40px] hover:bg-gray-200 transition cursor-pointer active:scale-95"
+                data-node-id="181:1097"
+                data-name="Background"
+                aria-label="Notifikasi"
+              >
+                <div
+                  className="h-[18px] w-[15.75px] relative shrink-0"
+                  data-node-id="181:1098"
+                  data-name="Img"
+                >
+                  <Image
+                    src="/assets/home/icon-bell.svg"
+                    alt="Notifikasi"
+                    width={15.75}
+                    height={18}
+                    className="block size-full"
+                  />
+                </div>
+                <div
+                  className="absolute bg-[#ef4444] border-2 border-[#f9f8f6] right-[8px] top-[8px] rounded-full size-[10px]"
+                  data-node-id="181:1100"
+                  data-name="Notification Indicator"
+                />
+              </button>
+            </div>
           </div>
 
           {/* Location Selector */}
